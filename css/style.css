@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+}
+@keyframes slideIn {
+    0% {transform: translateX(0px); opacity: 0;}
+    50% { transform: translateX(80px); opacity: 1;}
+    70% { opacity: 1;}
+    100% {opacity: 0;}
+}
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #153677, #4e085f);
+    padding: 10px;
+}
+.todo-app {
+    width: 100%;
+    max-width: 540px;
+    background-color: #fff;
+    margin: 100px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+}
+.todo-app h2 {
+    color: #002765;
+    display: flex;
+    align-items: center;
+    margin: 20px;
+
+}
+.todo-app h2 img {
+    width: 30px;
+    margin-left: 10px;
+}
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+input {
+    flex-grow: 2;
+    background: #dac4f0;
+    border-radius: 30px;
+    padding: 10px;
+    margin: 15px;
+    border: 2px solid #4e085f;
+    color: #000;
+}
+input::placeholder {
+    color: #31003d;
+}
+button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: #fff;
+    background:linear-gradient(135deg, #153677, #4e085f) ;
+    box-shadow: 2px 2px 6px #6e5f72;
+    cursor: pointer;
+    transition: color .8s ease-in-out;
+}
+button:hover {
+    background: linear-gradient(135deg, #7499e4, #d268ec);
+    color: #000;
+    transition: all .5s ease-in-out;
+}
+ul li {
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    cursor: pointer;
+    position: relative;
+}
+ul li::before {
+    content: "";
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-image: url(/images/unchecked.png);
+    background-size: contain;
+    background-position: center;
+    top: 12px;
+    left: 15px;
+}
+ul li.checked {
+    color: #555;
+    text-decoration: line-through;
+}
+ul li.checked::before {
+    background-image: url(/images/checked.png);
+}
+ul li span {
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+}
+ul li span:hover {
+    background: #d268ec;
+}
+.error {
+    position: absolute;
+    display: none;
+    margin-left: 30px;
+    animation: slideIn 3s ease-in-out;
+}
